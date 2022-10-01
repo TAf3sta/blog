@@ -10,6 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: >-
+          cd frontend &&
           npm install --immutable --immutable-cache --check-cache && npm run
           build
       - uses: FirebaseExtended/action-hosting-deploy@v0
