@@ -12,7 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: >-
-          cd frontend &&
           npm install --immutable --immutable-cache --check-cache && npm run
           build
       - uses: FirebaseExtended/action-hosting-deploy@v0
@@ -21,3 +20,4 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_BLOG_3B0F0 }}'
           channelId: live
           projectId: blog-3b0f0
+          entryPoint: "./frontend"
